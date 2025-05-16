@@ -1,17 +1,19 @@
-# COMPANY: CODTECH IT SOLUTIONS
-
-# NAME: PALADUGU VISHNU VARDHAN
-
-# INTERN ID: CODF32
-
-# DOMAIN: ARTIFICIAL INTELLIGENCE 
-
-# DURATION: 4 WEEEKS
-
-# MENTOR: NEELA SANTOSH KUMAR
-
-
 # Text Summarization Tool
+
+*COMPANY*: CODTECH IT SOLUTIONS
+
+*NAME*: PALADUGU VISHNU VARDHAN
+
+*INTERN ID*: CODF32
+
+*DOMAIN*: ARTIFICIAL INTELLIGENCE 
+
+*DURATION*: 4 WEEEKS
+
+*MENTOR*: NEELA SANTOSH KUMAR
+
+
+
 
 A Python-based natural language processing tool that summarizes lengthy articles into concise, meaningful summaries.
 
@@ -37,8 +39,8 @@ This tool uses the following NLP techniques:
 
 ```bash
 # Clone the repository
-git clone 
-cd 
+git clone https://github.com/Ver-er/Text-Summarization-Tool
+cd Text-Summarization-Tool
 
 # Install required packages
 pip install -r requirements.txt

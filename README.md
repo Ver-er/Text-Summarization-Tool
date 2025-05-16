@@ -99,7 +99,7 @@ Artificial Intelligence (AI) refers to the simulation of human intelligence in m
 
 When you run the summarizer with the `-v` flag, it generates a bar chart showing the importance score of each sentence:
 
-![Sentence Importance](sentence_importance_example.png)
+![Sentence Importance](sentence_importance.png)
 
 ## Requirements
 

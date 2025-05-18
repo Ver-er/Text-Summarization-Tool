@@ -26,88 +26,70 @@ A Python-based natural language processing tool that summarizes lengthy articles
 
 ## How It Works
 
-This tool uses the following NLP techniques:
+This tool implements a graph-based extractive summarization approach:
 
-1. **Text Preprocessing**: Cleans and normalizes the input text.
-2. **Sentence Tokenization**: Splits the text into individual sentences.
-3. **Word Tokenization**: Breaks sentences into words and removes stopwords.
-4. **Sentence Similarity Calculation**: Computes the similarity between sentences using cosine similarity.
-5. **Graph-based Ranking**: Uses the PageRank algorithm to rank sentences by importance.
-6. **Summary Generation**: Selects the top-ranked sentences to form a coherent summary.
+1. **Preprocessing** → Cleaning and normalizing text
+2. **Tokenization** → Breaking text into sentences and words
+3. **Similarity Analysis** → Computing relationships between sentences
+4. **Ranking** → Using PageRank to identify key sentences
+5. **Selection** → Extracting top sentences for the final summary
 
-## Installation
+## Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/Ver-er/Text-Summarization-Tool
-cd Text-Summarization-Tool
-
-# Install required packages
+# Install dependencies
 pip install -r requirements.txt
-```
 
-## Usage
-
-### Basic Usage
-
-```bash
-# Summarize text from a file
+# Summarize from a file
 python summarize_text.py -f sample_article.txt
 
-# Summarize text directly from command line
-python summarize_text.py -t "Your lengthy text goes here."
+# Summarize text directly
+python summarize_text.py -t "Your text here..." -o output.txt
 ```
 
-### Advanced Options
+## Command Options
 
-```bash
-# Specify the number of sentences in the summary
-python summarize_text.py -f sample_article.txt -n 3
+| Option | Description |
+|--------|-------------|
+| `-t, --text` | Text to summarize |
+| `-f, --file` | File containing text to summarize |
+| `-o, --output` | Output file to save summary |
+| `-n, --num-sentences` | Number of sentences in summary (default: 5) |
+| `-v, --visualize` | Generate visualization of sentence importance |
 
-# Save the summary to a file
-python summarize_text.py -f sample_article.txt -o summary.txt
-
-# Generate a visualization of sentence importance
-python summarize_text.py -f sample_article.txt -v
-```
-
-### As a Module
-
-You can also use the tool as a module in your Python scripts:
+## Using as a Module
 
 ```python
 from text_summarizer import extractive_summarize
 
+# Generate a 3-sentence summary
 text = "Your lengthy text here..."
-summary = extractive_summarize(text, num_sentences=5)
+summary = extractive_summarize(text, num_sentences=3)
 print(summary)
 ```
 
-## Example
+## Example Output
 
-### Input Text
-
-A sample article about artificial intelligence is included in the repository (`sample_article.txt`).
+### Original Article
+A sample article about artificial intelligence (~650 words)
 
 ### Generated Summary
-
 ```
-Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. Machine learning, a subset of AI, focuses on the development of computer programs that can access data and use it to learn for themselves. In healthcare, AI applications can help doctors make better diagnoses, develop treatment plans, and even discover new drugs. Looking to the future, the development of artificial general intelligence (AGI) – systems capable of understanding, learning, and applying knowledge across a wide range of tasks – represents one of the most exciting and challenging frontiers in AI research. In conclusion, artificial intelligence represents one of the most transformative technologies of our time.
+Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions.
+Machine learning, a subset of AI, focuses on the development of computer programs that can access data and use it to learn for themselves.
+In healthcare, AI applications can help doctors make better diagnoses, develop treatment plans, and even discover new drugs.
+Looking to the future, the development of artificial general intelligence (AGI) represents one of the most exciting and challenging frontiers in AI research.
+In conclusion, artificial intelligence represents one of the most transformative technologies of our time.
 ```
 
 ### Visualization
-
-When you run the summarizer with the `-v` flag, it generates a bar chart showing the importance score of each sentence:
 
 ![Sentence Importance](sentence_importance.png)
 
 ## Requirements
 
 - Python 3.6+
-- NLTK
-- NumPy
-- NetworkX
-- Matplotlib
+- Dependencies: nltk, numpy, networkx, matplotlib
 
 ## License
 
